@@ -39,7 +39,7 @@ extension OSCAMRPictureOptions {
 }
 
 func convertFlashMode(_ flashMode: Int?) -> AVCaptureDevice.FlashMode {
-    switch flashMode? {
+    switch flashMode {
     case 1:
         return .on
     case -1:
