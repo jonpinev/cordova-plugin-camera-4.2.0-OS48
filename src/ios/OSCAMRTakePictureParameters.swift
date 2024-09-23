@@ -21,7 +21,7 @@ extension OSCAMRPictureOptions {
         let targetSize = OSCAMRSize(width: parameters.targetWidth, height: parameters.targetHeight)
         let encodingType = OSCAMREncodingType(rawValue: parameters.encodingType) ?? .jpeg
         let direction = OSCAMRDirection(rawValue: parameters.cameraDirection) ?? .back
-        let flashMode = convertFlashMode(parameters.flashMode) ?? 0 //0 for auto, 1 for on, -1 for off
+        let flashMode = convertFlashMode(parameters.flashMode) //0 for auto, 1 for on, -1 for off
 
         self.init(
             quality: parameters.quality, 
@@ -32,8 +32,7 @@ extension OSCAMRPictureOptions {
             direction: direction, 
             allowEdit: parameters.allowEdit, 
             returnMetadata: parameters.includeMetadata ?? false,
-            latestVersion: parameters.latestVersion ?? false,
-            flashMode: flashMode
+            latestVersion: parameters.latestVersion ?? false
         )
     }
 }
